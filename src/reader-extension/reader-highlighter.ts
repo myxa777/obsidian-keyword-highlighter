@@ -17,7 +17,7 @@ function replaceWithHighlight(node: Node, keyword: KeywordStyle) {
     return;
   } else if (node.nodeType === Node.TEXT_NODE && node.nodeValue) {
     const searchText = `${keyword.keyword}`;
-    const index = node.nodeValue.indexOf(searchText);
+    const index = node.nodeValue.toUpperCase().indexOf(searchText.toUpperCase());
     if (index > -1) {
       // parent cannot be null
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
